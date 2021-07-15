@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main{
+    position: relative;
+    height:100%;
+    width: 100%;
+}
+.main h1{
+   position: relative;
+   height: auto;
+   width: 700px;
+   left: 50%;
+   transform: translateX(-50%);
+   margin: 5% 0 2% 0;
+   text-align: center;
+   font-size: 2.8em;
+   font-weight: 700;
+   letter-spacing: 1.5px;
+   color:#fed143;
+   text-transform: uppercase;
+   border-left: 5px solid #fed143;
+   border-right: 5px solid #fed143;
+   background:rgba(0, 0, 0, 1)  ;
+}
+.main p{
+    position: relative;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    color: #777;
+}
+.main .gallery{
+    position: relative;
+    height: auto;
+    width: 90%;
+    margin: auto;
+    padding: 45px 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 2vh;
+    grid-auto-flow: dense;
+}
+.main .gallery .img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.9);
+    border-radius: 2px;
+}
+.main .gallery .img .photoby{
+    position: absolute;
+    top: 88%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+}
+.main .gallery .img .description{
+    position: absolute;
+    top: 90%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fed143;
+    font-size: 2em;
+    font-style: italic;
+    font-weight: 700;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+}
+
+.main .gallery .img .img-bel{
+    position: absolute;
+    top:90%;
+    bottom: 0;
+    left:-40%;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.main .gallery .img .img-bel p{
+    position:relative;
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.main .gallery .img .img-bel h1{
+    position: relative;
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: 700;
+    color: #fed143;
+    border: 0;
+    background: transparent;
+    margin-top: 0;
+    text-transform: none;
+
+}
+    
+.main .gallery .img:first-child{
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(2n+3){
+    grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(4n+5){
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(6n+7){
+    grid-row-start: span 1;
+}
+.main .gallery .img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(1);
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+}
+.main .gallery .img:hover img{
+    filter: brightness(0.5);
+}
+
+.main .gallery .img:hover .img-bel{
+    visibility: visible;
+    opacity: 1;
+}
+.main .gallery .img:hover .photoby{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+@media only screen and (max-width: 768px){
+	.main h1{
+		font-size: 1.8em;
+		width: 400px;
+	}
+	.main p{
+		font-size: 1.2em;
+	}
+	.main .gallery{
+		display: grid;
+		grid-template-columns: auto auto;
+	}
+    .main .gallery .img .img-bel h1{
+        font-size: 1.2em;
+    }
+    .main .gallery .img .img-bel p{
+        font-size: 0.8em;
+    }
+    .main .gallery .img .img-bel{
+        position: absolute;
+        top:85%;
+        bottom: 0;
+        left:-35%;
+        right: 0;
+    }
+}
+@media only screen and (max-width: 430px){
+	.main h1{
+		font-size: 1.2em;
+		width: 300px;
+	}
+	.main p{
+		font-size: 0.89em;
+	}
+	.main .gallery{
+		display: block;
+	}
+	.main .gallery .img{
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin:2% 0;
+	}
+	.main .gallery .img img{
+		display: block;
+		filter: brightness(1) grayscale(0);
+	}
+    .main .gallery .img .description{
+        font-size: 0.89em;
+    }
+   .main .gallery .img .photoby{
+    font-size: 0.6em;
+   }
+   .main .gallery .img .img-bel {
+    position: absolute;
+    top:80%;
+    bottom: 0;
+    left:-30%;
+    right: 0;
+    }
+}
